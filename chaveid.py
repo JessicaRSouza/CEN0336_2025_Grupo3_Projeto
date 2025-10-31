@@ -8,7 +8,15 @@ O que você gostaria de fazer?
 ----------------------------------------
 ''')
 
-escolha = input("Digite sua resposta: ")
+while True:
+	try:
+		escolha = int(input("Digite sua resposta (1 ou 2): "))
+		if escolha not in [1,2]:
+			print("⚠️  Opção inválida! Por favor, digite 1 ou 2.\n")
+			continue
+		break
+	except ValueError:
+		print("⚠️  Entrada inválida! Digite apenas o número 1 ou 2.\n")
 
 #-------------------------------------------------------------------------------------------
 
@@ -25,11 +33,12 @@ O que você deseja fazer?
 ----------------------------------------
 ''')
 
-	aprofundamento = input("Digite sua resposta: ")
-
-	if int(aprofundamento) == 1:
-		print("Ótimo! Vamos começar o processo de identificação.")
-
+	while True:
+		try:
+			aprofundamento = int(input("Digite sua resposta: "))
+			if aprodundamento == 1:
+				print("🌱 Ótimo! Vamos começar o processo de identificação.")
+			
 	else:
 		print('''Infelizmente, nosso projeto não traduziu uma chave mais aprofundada ainda.
 Entretanto, caso queira, recomendamos checar a seguinte bibliografia:
@@ -37,7 +46,7 @@ SOUZA, V.C.; LORENZI, H. Chave de Identificação: Para as principais famílias 
 
 #-------------------------------------------------------------------------------------------
 
-else:
+elif int(escolha) == 2:
 	print('''🌿 Sobre o projeto
 ========================================
 Este script apresenta uma *chave de identificação digital para famílias botânicas*, 
